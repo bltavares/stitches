@@ -1,3 +1,4 @@
+#[macro_use] extern crate lazy_static;
 extern crate hyper;
 
 use hyper::server::{Server, Handler};
