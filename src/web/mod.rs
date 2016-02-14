@@ -65,7 +65,10 @@ impl Storage {
         let uuid = Uuid::parse_str(&id).expect("Could not parse id");
         let patch = match self.get(&uuid) {
             Some(p) => p,
-            None => { redirect(res, "/".to_owned()); return; },
+            None => {
+                redirect(res, "/".to_owned());
+                return;
+            }
         };
 
         let mut data = HashMap::new();
